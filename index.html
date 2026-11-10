@@ -124,4 +124,154 @@
   <!-- Hero Section -->
   <header class="hero-section text-center">
     <div class="container">
-      <h1 class="display-
+      <h1 class="display-5 fw-bold mb-3 text-white">Artificial Intelligence Insights & Showcase</h1>
+      <p class="lead mx-auto" style="max-width: 750px;">
+        An executive overview exploring foundational pillars, enterprise-grade capabilities, and real-time interactive demonstrations of modern AI architectures.
+      </p>
+    </div>
+  </header>
+
+  <div class="container mt-5">
+
+    <!-- Section 1: Types of AI with Images -->
+    <section class="mb-5">
+      <h3 class="fw-bold mb-4 text-white">1. Core Categories of Artificial Intelligence</h3>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-3">
+          <div class="card card-custom h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Narrow AI">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-white mb-2">Narrow AI (ANI)</h5>
+              <p class="small mb-4">Engineered to execute specific operational parameters like data classification and search algorithms.</p>
+              <span class="badge badge-blue mt-auto w-auto align-self-start">Current Standard</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-3">
+          <div class="card card-custom h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Generative AI">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-white mb-2">Generative AI</h5>
+              <p class="small mb-4">Utilizes advanced LLMs to synthesize contextual documents, application logic, and visual assets.</p>
+              <span class="badge badge-gold mt-auto w-auto align-self-start">High Growth</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-3">
+          <div class="card card-custom h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="General AI">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-white mb-2">General AI (AGI)</h5>
+              <p class="small mb-4">Theoretical milestone representing human-level cognitive flexibility across multi-disciplinary domains.</p>
+              <span class="badge bg-secondary text-light mt-auto w-auto align-self-start">In Research</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-md-3">
+          <div class="card card-custom h-100 d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Super AI">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <h5 class="fw-bold text-white mb-2">Super AI (ASI)</h5>
+              <p class="small mb-4">Hypothetical intelligence architecture expected to exceed aggregate human cognitive capacity.</p>
+              <span class="badge bg-secondary text-light mt-auto w-auto align-self-start">Future Horizon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Enterprise Use Cases -->
+    <section class="mb-5">
+      <h3 class="fw-bold mb-4 text-white">2. Real-World Enterprise Use Cases</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card card-custom p-4">
+            <h5 class="fw-bold text-white mb-2">📊 Predictive Analytics & Forecasting</h5>
+            <p class="mb-0">Processing high-velocity streaming metrics to forecast market shifts, resource utilization curves, and operational bottlenecks with minimal latency.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-custom p-4">
+            <h5 class="fw-bold text-white mb-2">💻 Automated Software Engineering</h5>
+            <p class="mb-0">Accelerating enterprise deployment life cycles through intelligent script generation, vulnerability scanning, and technical documentation auditing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Live Interactive Demo -->
+    <section class="mb-5">
+      <h3 class="fw-bold mb-4 text-white">3. Live AI Execution Sandbox</h3>
+      <div class="sandbox-container">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label fw-bold text-light small">Groq API Key</label>
+            <input type="password" id="apiKey" class="form-control" placeholder="gsk_..." />
+          </div>
+          <div class="col-md-8">
+            <label class="form-label fw-bold text-light small">Executive Query / Prompt</label>
+            <input type="text" id="userPrompt" class="form-control" placeholder="e.g. Outline 3 primary strategic benefits of serverless AI architecture." />
+          </div>
+          <div class="col-12 mt-3">
+            <button onclick="runAiDemo()" id="runBtn" class="btn btn-gold w-100 py-3 shadow">Execute Secure AI Query</button>
+          </div>
+        </div>
+        
+        <div class="mt-4">
+          <label class="form-label fw-bold text-light small">Real-Time Response Stream:</label>
+          <pre id="aiOutput">System ready. Awaiting secure authorization token and prompt execution...</pre>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+<script>
+async function runAiDemo() {
+  const apiKey = document.getElementById("apiKey").value.trim();
+  const prompt = document.getElementById("userPrompt").value.trim();
+  const output = document.getElementById("aiOutput");
+  const btn = document.getElementById("runBtn");
+
+  if (!apiKey) { alert("Please enter your Groq API Key."); return; }
+  if (!prompt) { alert("Please enter a question or prompt."); return; }
+
+  btn.disabled = true;
+  btn.textContent = "Processing via Secure Neural Node (openai/gpt-oss-20b)...";
+  output.textContent = "Establishing secure TLS handshake with Groq LLM cluster...";
+
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + apiKey,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "openai/gpt-oss-20b",
+        messages: [
+          { role: "system", content: "You are an elite enterprise AI consultant. Deliver sophisticated, structured, and professional insights tailored for executive boards." },
+          { role: "user", content: prompt }
+        ],
+        temperature: 0.3
+      })
+    });
+
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.message);
+
+    output.textContent = data.choices[0].message.content;
+  } catch (err) {
+    output.textContent = "Error: " + err.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Execute Secure AI Query";
+  }
+}
+</script>
+</body>
+</html>
