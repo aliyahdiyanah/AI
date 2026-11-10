@@ -12,8 +12,8 @@
     --card-border: #1e293b;
     --accent-gold: #f59e0b;
     --accent-blue: #38bdf8;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --text-main: #ffffff;
+    --text-muted: #cbd5e1; /* Ditukar jadi lebih cerah supaya jelas dibaca */
   }
   body {
     background-color: var(--bg-dark);
@@ -32,7 +32,7 @@
   }
   .hero-section {
     padding: 70px 0 50px;
-    background: radial-gradient(circle at top, #131b2e 0%, #0b0f19 100%);
+    background: #0b0f19;
     border-bottom: 1px solid var(--card-border);
   }
   .card-custom {
@@ -40,24 +40,31 @@
     border: 1px solid var(--card-border);
     border-radius: 14px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
   }
   .card-custom:hover {
     transform: translateY(-5px);
     border-color: var(--accent-gold);
     box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
   }
+  .card-img-top {
+    height: 140px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--card-border);
+    opacity: 0.85;
+  }
   .badge-gold {
-    background-color: rgba(245, 158, 11, 0.12);
+    background-color: rgba(245, 158, 11, 0.15);
     color: var(--accent-gold);
     border: 1px solid rgba(245, 158, 11, 0.3);
-    font-weight: 500;
+    font-weight: 600;
   }
   .badge-blue {
-    background-color: rgba(56, 189, 248, 0.12);
+    background-color: rgba(56, 189, 248, 0.15);
     color: var(--accent-blue);
     border: 1px solid rgba(56, 189, 248, 0.3);
-    font-weight: 500;
+    font-weight: 600;
   }
   .sandbox-container {
     background-color: var(--card-bg);
@@ -92,165 +99,6 @@
   }
   pre {
     background-color: #070a12;
-    color: #38bdf8;
+    color: var(--accent-blue);
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid var(--card-border);
-    white-space: pre-wrap;
-    word-break: break-word;
-    font-size: 14px;
-  }
-  h3 {
-    letter-spacing: -0.5px;
-  }
-</style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark px-4">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">⚡ Enterprise AI Hub</a>
-      <span class="badge badge-gold px-3 py-2 rounded-pill">Secure Executive Tier</span>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero-section text-center">
-    <div class="container">
-      <h1 class="display-5 fw-bold mb-3 text-white">Artificial Intelligence Insights & Showcase</h1>
-      <p class="lead text-muted mx-auto" style="max-width: 750px;">
-        An executive overview exploring foundational pillars, enterprise-grade capabilities, and real-time interactive demonstrations of modern AI architectures.
-      </p>
-    </div>
-  </header>
-
-  <div class="container mt-5">
-
-    <!-- Section 1: Types of AI -->
-    <section class="mb-5">
-      <h3 class="fw-bold mb-4 text-white">1. Core Categories of Artificial Intelligence</h3>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card card-custom h-100 p-4 d-flex flex-column">
-            <h5 class="fw-bold text-white mb-3">Narrow AI (ANI)</h5>
-            <p class="text-muted small mb-4">Engineered to execute specific operational parameters like data classification, search algorithms, and automated filtering.</p>
-            <span class="badge badge-blue mt-auto w-auto align-self-start">Current Standard</span>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-custom h-100 p-4 d-flex flex-column">
-            <h5 class="fw-bold text-white mb-3">Generative AI</h5>
-            <p class="text-muted small mb-4">Utilizes advanced LLMs and neural frameworks to synthesize contextual documents, application logic, and visual assets.</p>
-            <span class="badge badge-gold mt-auto w-auto align-self-start">High Growth</span>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-custom h-100 p-4 d-flex flex-column">
-            <h5 class="fw-bold text-white mb-3">General AI (AGI)</h5>
-            <p class="text-muted small mb-4">Theoretical milestone representing human-level cognitive flexibility across multi-disciplinary operational domains.</p>
-            <span class="badge bg-secondary text-light mt-auto w-auto align-self-start">In Research</span>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card card-custom h-100 p-4 d-flex flex-column">
-            <h5 class="fw-bold text-white mb-3">Super AI (ASI)</h5>
-            <p class="text-muted small mb-4">Hypothetical intelligence architecture expected to exceed aggregate human cognitive capacity and problem-solving velocity.</p>
-            <span class="badge bg-secondary text-light mt-auto w-auto align-self-start">Future Horizon</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2: Enterprise Use Cases -->
-    <section class="mb-5">
-      <h3 class="fw-bold mb-4 text-white">2. Real-World Enterprise Use Cases</h3>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="fw-bold text-white mb-2">Predictive Analytics & Forecasting</h5>
-            <p class="text-muted mb-0">Processing high-velocity streaming metrics to forecast market shifts, resource utilization curves, and operational bottlenecks with minimal latency.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="fw-bold text-white mb-2">Automated Software Engineering</h5>
-            <p class="text-muted mb-0">Accelerating enterprise deployment life cycles through intelligent script generation, vulnerability scanning, and technical documentation auditing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Live Interactive Demo -->
-    <section class="mb-5">
-      <h3 class="fw-bold mb-4 text-white">3. Live AI Execution Sandbox</h3>
-      <div class="sandbox-container">
-        <div class="row g-3">
-          <div class="col-md-4">
-            <label class="form-label fw-bold text-light small">Groq API Key</label>
-            <input type="password" id="apiKey" class="form-control" placeholder="gsk_..." />
-          </div>
-          <div class="col-md-8">
-            <label class="form-label fw-bold text-light small">Executive Query / Prompt</label>
-            <input type="text" id="userPrompt" class="form-control" placeholder="e.g. Outline 3 primary strategic benefits of serverless AI architecture." />
-          </div>
-          <div class="col-12 mt-3">
-            <button onclick="runAiDemo()" id="runBtn" class="btn btn-gold w-100 py-3 shadow">Execute Secure AI Query</button>
-          </div>
-        </div>
-        
-        <div class="mt-4">
-          <label class="form-label fw-bold text-light small">Real-Time Response Stream:</label>
-          <pre id="aiOutput">System ready. Awaiting secure authorization token and prompt execution...</pre>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-<script>
-async function runAiDemo() {
-  const apiKey = document.getElementById("apiKey").value.trim();
-  const prompt = document.getElementById("userPrompt").value.trim();
-  const output = document.getElementById("aiOutput");
-  const btn = document.getElementById("runBtn");
-
-  if (!apiKey) { alert("Please enter your Groq API Key."); return; }
-  if (!prompt) { alert("Please enter a question or prompt."); return; }
-
-  btn.disabled = true;
-  btn.textContent = "Processing via Secure Neural Node (openai/gpt-oss-20b)...";
-  output.textContent = "Establishing secure TLS handshake with Groq LLM cluster...";
-
-  try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer " + apiKey,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "openai/gpt-oss-20b",
-        messages: [
-          { role: "content", content: "" },
-          { role: "system", content: "You are an elite enterprise AI consultant. Deliver sophisticated, structured, and professional insights tailored for executive boards." },
-          { role: "user", content: prompt }
-        ],
-        temperature: 0.3
-      })
-    });
-
-    const data = await res.json();
-    if (data.error) throw new Error(data.error.message);
-
-    output.textContent = data.choices[0].message.content;
-  } catch (err) {
-    output.textContent = "Error: " + err.message;
-  } finally {
-    btn.disabled = false;
-    btn.textContent = "Execute Secure AI Query";
-  }
-}
-</script>
-</body>
-</html>
+    border-radius:
